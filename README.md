@@ -96,3 +96,6 @@ git reset --hard <hash> , remover/devolver commits a la rama main.
 
 ***git push -f origin main***
 
+### prueba de merge de rama de desarrollo a rama de release
+
+Este texto fue añadido en la rama "main" de desarrollo.
