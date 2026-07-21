@@ -2,8 +2,11 @@
 
 ### Configuracion de usuario local
 git config --global , configuracion global para la maquina local:
-    user.name"nombre del autor"
-    user.email"correo"
+
+        git config --global user.name <"nombre usuario git">
+
+user.name"nombre del autor"
+user.email"correo"
 
 ### Iniciar git
 iniciar repositorio git en directorio raiz.
