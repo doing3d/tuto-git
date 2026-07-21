@@ -34,38 +34,56 @@ git branch <>, crear nuevo flujo.
 
 git switch <>, cambiar a otro flujo con nombre <>.
 
-git merge , combinar ficheros de un flujo a otro.
-
 git branch -d <flujo>, eliminar una rama
 - al eliminar se quita la referncia a la rama/flujo pero todos los commits siguen exitiendo y son solo acessibles por su hash.
 - limpia el log para simplificar el arbol del proyecto.
 
 ### Comandos para guardar cambios sin lanzar commit
 
-git stash, guardado temporal (WIP) de todos los ficheros aun no comiteados sin hacer un commit en la rama.
+***git stash***, guardado temporal (WIP) de todos los ficheros aun no comiteados sin hacer un commit en la rama.
 
-git stash push -m "<>", guardado de stash con un mensaje.
+***git stash push -m "<>"***, **(Recomendado)** guardado de stash con un mensaje.
 
-git stash list, listar todos los stash guardados.
+***git stash list***, listar todos los stash guardados.
 
-git stash apply stash@{<>}, recupera un stash con el numero de la lista sin borrarlo de la lista.
+***git stash apply stash@{<>}***, recupera un stash con el numero de la lista sin borrarlo de la lista.
 
-git stash apply, recupera el ultimo stash realizado sin borrarlo de la lista.
+***git stash apply***, recupera el ultimo stash realizado sin borrarlo de la lista.
 
-git stash clear, borra toda la lista de stash y no se pueden recuperar (usar solo al final).
+***git stash clear***, borra toda la lista de stash y no se pueden recuperar (usar solo al final).
 
 
-git stash pop, recupera el ultimo stash realizado y lo borra de la lista.
+***git stash pop*** - recupera el ultimo stash realizado y lo borra de la lista.
 
-git stash drop stash@{<>}, eliminar un stash de la lista.
+***git stash drop stash@{<>}*** - eliminar un stash de la lista.
 
-git reflog, log completo de aciones.
+***git reflog*** - log completo de aciones.
 
 ### Comando de git reset
 
 git reset <fichero>, reset/quitar cambios añadidos al stage con git add.
 
 git reset --hard <hash> , remover/devolver commits a la rama main.
+
+## Como hacer ***Merge*** entre ramas
+
+1) Hacer checkout (moverse) a la rama donde de quiere agregar los cambios.
+2) Usar el comando:
+
+    * ***git merge --no-ff </rama/>*** 
+
+donde:
+    
+* </rama/>: nombre de la rama donde estan los cambios.
+
+*  (--no-ff): para que el merge tenga commit y aparezca en el arbol de cambios.
+
+
+3) Para este caso se abrira un archivo de texto donde se debe escribir el commit. Despues de escribir el commit guardar el archivo y cerrar la pestaña del archivo  para que Git continue con el merge.
+
+Si el merge es exitoso en el terminal aparece un resumen de los ficheros actualizados con los lineas añadidas y lineas eleminadas.
+
+
 
 ## Comandos para interactuar entre ficheros locales y Github
 
