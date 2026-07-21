@@ -82,6 +82,20 @@ git reset --hard <hash> , remover/devolver commits a la rama main.
 
 ***git push***, sincronizar los ficheros locales con el repositorio de github.
 
+## Clonar repositorio desde github
+
+**git clone < URL>** - direccion https del repositorio a clonar
+
+* para sincronizar cambios locales al repositorio clonado ejecutar los comandos:
+
+1) fetch
+2) pull
+3) push
+
+para actualizar los cambios en el repositorio.
+
+** Aplica para solo repositorios propios.
+
 ### Comando para sobreescribir los ficheros de un repositoro en Github por un nuevo proyecto
 
 1) remover el "origin" del antiguo repositorio.
