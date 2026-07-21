@@ -6,35 +6,61 @@ git config --global , configuracion global para la maquina local:
     user.email"correo"
 
 ### Iniciar git
+iniciar repositorio git en directorio raiz.
 
-git init , iniciar repositorio git en directorio raiz.
+    git init
+
 
 #### Nombre de archivo para ignorar ficheros:
 .gitignore , archivo donde se especifican los ficheros para ignorar del reporsitorio.
 
 ### Comandos mas usados
+Añadir ficheros al stage.
 
-git add <> , añadir ficheros para hacer commit.
+    git add <>
 
-git commit -m "comentario para el commit" , hacer fotografia, guardar cambios.
+Guardar cambios haciendo commit a los ficheros en stage.
 
-git status , estado de los ficheros: con cambios, pendientes de añadir.
+    git commit -m "comentario para el commit" , 
 
-git log , linea de commits hechos en la rama.
+Estado de los ficheros: con cambios, pendientes de añadir.
 
-git checkout <fichero/hash/tag> , restaurar cambios guardados del fichero al del ultimo commit, desplazamiento entre commits usando el hash o el tag.
+    git status
 
-git restore <fichero> , restaruar los cambios guardados del fichero que aun no sean añadido al stage (git add), comando nuevo separad de hit checkout.
+Linea de commits hechos en la rama.
 
-git tag <name_n>, etiquetar un commit con un nombre, tag en donde se ubica el head.
+    git log
 
-git tag, listado de tags.
+Desplazamiento del head hacia commits usando el hash, el tag o al ultimo commit de la rama.
 
-git branch <>, crear nuevo flujo.
+    git checkout <hash/tag/branch>
 
-git switch <>, cambiar a otro flujo con nombre <>.
+Restaruar el fichero que aun no sean añadido al stage (git add).
 
-git branch -d <flujo>, eliminar una rama
+    git restore </fichero>
+
+* comando nuevo separado de git checkout.
+
+Etiquetar un commit con un nombre. El tag se aplica en el commit donde se ubica el head.
+
+    git tag <name_n>
+
+Listado de tags.
+
+    git tag
+
+Crear nueva rama.
+
+    git branch <>
+
+Cambiarse a otra rama.
+
+    git switch <>
+
+Eliminar una rama.
+
+    git branch -d <flujo>
+
 - al eliminar se quita la referncia a la rama/flujo pero todos los commits siguen exitiendo y son solo acessibles por su hash.
 - limpia el log para simplificar el arbol del proyecto.
 
@@ -65,7 +91,7 @@ git reset <fichero>, reset/quitar cambios añadidos al stage con git add.
 
 git reset --hard <hash> , remover/devolver commits a la rama main.
 
-## Como hacer ***Merge*** entre ramas
+### Como hacer ***Merge*** entre ramas
 
 1) Hacer checkout (moverse) a la rama donde de quiere agregar los cambios.
 2) Usar el comando:
@@ -100,17 +126,15 @@ Si el merge es exitoso en el terminal aparece un resumen de los ficheros actuali
 
 ***git push***, sincronizar los ficheros locales con el repositorio de github.
 
-## Clonar repositorio desde github
+### Clonar repositorio desde github
 
-**git clone < URL>** - direccion https del repositorio a clonar
+**git clone </URL/>** - direccion https del repositorio a clonar
 
-* para sincronizar cambios locales al repositorio clonado ejecutar los comandos:
+Para sincronizar cambios locales al repositorio clonado ejecutar los comandos:
 
 1) fetch
 2) pull
 3) push
-
-para actualizar los cambios en el repositorio.
 
 ** Aplica para solo repositorios propios.
 
@@ -118,17 +142,17 @@ para actualizar los cambios en el repositorio.
 
 1) remover el "origin" del antiguo repositorio.
 
-***git remote rm origin***
+    ***git remote rm origin***
 
 2) añadir un "origin" en el nuevo repositorio.
 
-***git remote add origin (url del antiguo repo)***
+    ***git remote add origin (url del antiguo repo)***
 
 3) forzar el push del nuevo repo a Github
 
-***git push -f origin main***
+    ***git push -f origin main***
 
-### prueba de merge de rama de desarrollo a rama de release
+### Prueba de merge de rama de desarrollo a rama de release
 
 Este texto fue añadido en la rama "main" de desarrollo.
 
